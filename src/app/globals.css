@@ -1,0 +1,170 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-light: #6c54ff;
+  --primary-dark: #6c54ff;
+
+  --background-light: #ffffff;
+  --background-secondary-light: #fbfbfb;
+  --background-dark: #424242;
+  --background-secondary-dark: #282828;
+
+  --text-primary-light: #3d3e40;
+  --text-secondary-light: #aaaaaa;
+  --text-disabled-light: #ababab;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #aaaaaa;
+  --text-disabled-dark: #ababab;
+
+  --border-color-primary-light: #f2f2f2;
+  --border-color-secondary-light: #ffffff;
+  --divider-color-light: #aeaeae;
+  --hover-color-light: #6c54ff;
+  --error-color-light: #d93c3c;
+  --success-color-light: #00d153;
+
+  --border-color-primary-dark: #9a9a9a;
+  --border-color-secondary-dark: #9a9a9a;
+  --divider-color-dark: #aeaeae;
+  --hover-color-dark: #6c54ff;
+  --error-color-dark: #d93c3c;
+  --success-color-dark: #00d153;
+
+  --icon-stroke-light: #3d3e40;
+  --icon-stroke-dark: #ffffff;
+
+  --card-border-color-dark: #9a9a9a;
+  --card-border-color-light: #ffffff;
+
+  --card-shadow-color-dark: #343434;
+  --card-shadow-color-light: #e3e3e3;
+
+  --hover-bg-color-light: #efefef;
+  --hover-bg-color-dark: #474747;
+
+  --hover-border-color-light: #cccccc;
+  --hover-border-color-dark: #9a9a9a;
+
+  --button-default-color: #6c54ff;
+  --button-hover-color: #a798ff;
+  --button-inactive-color: #cec6ff;
+}
+
+.light-theme,
+:root:not([data-theme="dark"]) {
+  --primary: var(--primary-light);
+  --background: var(--background-light);
+  --background-secondary: var(--background-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-disabled: var(--text-disabled-light);
+  --border-color-primary: var(--border-color-primary-light);
+  --border-color-secondary: var(--border-color-secondary-light);
+  --divider-color: var(--divider-color-light);
+  --hover-color: var(--hover-color-light);
+  --error-color: var(--error-color-light);
+  --success-color: var(--success-color-light);
+  --icon-color: var(--icon-stroke-light);
+  --card-border-color: var(--card-border-color-light);
+  --card-shadow: var(--card-shadow-color-light);
+
+  --hover-bg-color: var(--hover-bg-color-light);
+  --hover-border-color: var(--hover-border-color-light);
+
+  --button-color: var(--button-default-color);
+  --button-hover: var(--button-hover-color);
+  --button-inactive: var(--button-inactive-color);
+}
+
+.dark-theme,
+[data-theme="dark"] {
+  --primary: var(--primary-dark);
+  --background: var(--background-dark);
+  --background-secondary: var(--background-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-disabled: var(--text-disabled-dark);
+  --border-color-primary: var(--border-color-primary-dark);
+  --border-color-secondary: var(--border-color-secondary-dark);
+  --divider-color: var(--divider-color-dark);
+  --hover-color: var(--hover-color-dark);
+  --error-color: var(--error-color-dark);
+  --success-color: var(--success-color-dark);
+  --icon-color: var(--icon-stroke-dark);
+  --card-border-color: var(--card-border-color-dark);
+  --card-shadow: var(var(--card-shadow-color-dark));
+
+  --hover-bg-color: var(var(--hover-bg-color-dark));
+  --hover-border-color: var(--hover-border-color-dark);
+
+  --button-color: var(--button-default-color);
+  --button-hover: var(--button-hover-color);
+  --button-inactive: var(--button-inactive-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--primary-dark);
+    --background: var(--background-dark);
+    --background-secondary: var(--background-secondary-dark);
+    --text-primary: var(--text-primary-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --text-disabled: var(--text-disabled-dark);
+    --border-color-primary: var(--border-color-primary-dark);
+    --border-color-secondary: var(--border-color-secondary-dark);
+    --divider-color: var(--divider-color-dark);
+    --hover-color: var(--hover-color-dark);
+    --error-color: var(--error-color-dark);
+    --success-color: var(--success-color-dark);
+    --icon-color: var(--icon-stroke-dark);
+    --card-border-color: var(--card-border-color-dark);
+    --card-shadow: var(var(--card-shadow-color-dark));
+
+    --hover-bg-color: var(var(--hover-bg-color-dark));
+    --hover-border-color: var(--hover-border-color-dark);
+
+    --button-color: var(--button-default-color);
+    --button-hover: var(--button-hover-color);
+    --button-inactive: var(--button-inactive-color);
+  }
+}
+
+@font-face {
+  font-family: "manrope";
+  src: url(../assets//fonts/Manrope/Manrope-VariableFont_wght.ttf)
+    format("truetype");
+  font-weight: 100 900;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "manrope";
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .strip-data-card {
+    @apply w-full border-2 border-card-border  bg-background-secondary p-4  shadow-custom text-text-primary;
+  }
+  .icon-buttons {
+    @apply border-[1.75px] hover:shadow-sm hover:bg-hover-bg-color hover:border-hover-border-color border-border-color-primary;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
